@@ -3,7 +3,7 @@ logging:
     com.foalnet: trace
 
 server:
-  port: 9090
+  port: 8080
   session-timeout: 30
   tomcat:
     uri-encoding: UTF-8

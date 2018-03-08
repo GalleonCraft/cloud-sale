@@ -45,7 +45,7 @@ public class JwtToken {
         try{
             jwt=verifier.verify(token);
         }catch (Exception e){
-            throw new RuntimeException("凭证已过气");
+            throw new RuntimeException("凭证已过气！");
         }
         return jwt.getClaims();
     }
