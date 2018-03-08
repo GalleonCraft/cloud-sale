@@ -1,6 +1,5 @@
 package com.foalnet.cloudsale.controller;
 
-import com.foalnet.cloudsale.entity.BaseEntity;
 import com.foalnet.cloudsale.service.ManagerService;
 
 import org.slf4j.Logger;
@@ -29,10 +28,10 @@ public class ManagerController {
     private static Logger logger = LoggerFactory.getLogger(ManagerController.class);
     @Autowired
     ManagerService managerService;
-    //测试入口@author
-    @RequestMapping("/xmjl")
-    public List index(){
-        List<BaseEntity>list=managerService.queryAll();
-        return list;
-    }
+//    //测试入口
+//    @RequestMapping("/xmjl")
+//    public List index(){
+//        List<BaseEntity>list=managerService.queryAll();
+//        return list;
+//    }
 }
