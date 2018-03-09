@@ -2,12 +2,14 @@ package com.foalnet.cloudsale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+/**
+ * Created by FYQ on 2017/3/9.
+ * 注释部分为需要打war包时配置，springBoot默认是jar包可以直接跑；
+ */
 @SpringBootApplication
 public class CloudSaleApplication {
-//打包至tomcat是需要此配置，开发时屏蔽
+//打成war包至tomcat是需要此配置，一般使用springBoot内置tomcat，打啥war包呢？
 //public class CloudSaleApplication extends SpringBootServletInitializer {
 //	@Override
 //	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -16,4 +18,5 @@ public class CloudSaleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CloudSaleApplication.class, args);
 	}
+
 }
