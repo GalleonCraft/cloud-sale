@@ -15,9 +15,9 @@ spring:
         charset: UTF-8
         enabled: true
   datasource:
-      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://localhost:1433;DatabaseName=cloud-sale
-      username: sa
+      driverClassName: com.mysql.jdbc.Driver #{com.microsoft.sqlserver.jdbc.SQLServerDriver \ com.mysql.jdbc.Driver}
+      url: jdbc:mysql://localhost:3306/cloud-sale?useUnicode=true&characterEncoding=UTF-8 #{jdbc:sqlserver://localhost:1433;DatabaseName=cloud-sale \ jdbc:mysql://localhost:3306/cloud-sale}
+      username: fyqvip
       password: 911120
       type: com.alibaba.druid.pool.DruidDataSource
       connectionProperties: druid.stat.mergeSql=true
@@ -25,10 +25,10 @@ spring:
 mapper:
     mappers: tk.mybatis.springboot.util.MyMapper
     not-empty: false
-    identity: SQLSERVER
+    identity: MYSQL #{SQLSERVER \ MYSQL}
 
 pagehelper:
-    helperDialect: sqlserver
+    helperDialect: mysql #{mysql | SQLSERVER}
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql

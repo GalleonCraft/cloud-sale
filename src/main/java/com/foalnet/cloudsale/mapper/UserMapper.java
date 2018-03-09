@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
-    @Select("SELECT * FROM dbo.t_user " +
+    @Select("SELECT * FROM t_user " +
             "WHERE username=#{username} ")
     @Results(value = {
             @Result(property = "role", column = "role_id", one = @One(select ="com.foalnet.cloudsale.mapper.RoleMapper.selectByPrimaryKey")),

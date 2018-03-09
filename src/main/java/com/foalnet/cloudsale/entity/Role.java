@@ -3,7 +3,7 @@ package com.foalnet.cloudsale.entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "dbo.t_role")
+@Table(name = "t_role")
 public class Role {
     @Id
     private Long id;

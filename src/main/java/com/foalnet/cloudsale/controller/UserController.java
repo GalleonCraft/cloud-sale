@@ -2,10 +2,8 @@ package com.foalnet.cloudsale.controller;
 
 import com.foalnet.cloudsale.entity.User;
 import com.foalnet.cloudsale.jwt.JwtToken;
-import com.foalnet.cloudsale.service.ManagerService;
 import com.foalnet.cloudsale.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -19,13 +17,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    @Autowired
-    ManagerService managerService;
+
     @Autowired
     UserService userService;
 
     @RequestMapping("/lgoin")
     public Map<String,Object> getAccessToken(String username, String password) throws Exception {
+        userService.queryAll();
         User user = userService.queryByUsername(username);
         Map<String,Object> data = new HashMap<>();
         if(user.getPassword().equals(password)){
